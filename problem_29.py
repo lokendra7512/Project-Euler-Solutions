@@ -1,17 +1,13 @@
-from math import *
+#list to store the values of powers
+powers = []
 
-numbers_list = []
+#for loops to iterate through the numbers
+for a in range(2,101):
+	for b in range(2,101):
+		powers.append(a**b)
 
-for i in xrange(2,101):
-    for j in xrange(2,101):
-        no = pow(i,j)
-        if no not in numbers_list:
-            numbers_list.append(no)
+#removing the duplicates using sets
+powers = set(powers)
 
-print len(numbers_list)
-
-'''
-Alternative one-liner
-'''
-
-print len(set(a**b for a in xrange(2,101) for b in xrange(2,101)))
+#printing the length of powers
+print(len(powers))
